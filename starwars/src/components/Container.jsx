@@ -14,4 +14,4 @@ const Container = styled.div`
     border-radius: 8px;
 `;
 
-export default Container
+export default Container;

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import axios from 'axios';
-// import styled from 'styled-components';
 
 import Character from './components/Character';
 import Container from './components/Container';
@@ -20,14 +19,14 @@ const App = () => {
   // sync up with, if any.
 
   useEffect(() => {
-    console.log('this runs ONLY the first time DOM is updated')
+    console.log('this runs ONLY the first time DOM is updated');
     axios.get(`${base_url}${characters}`)
     .then(res => {
-      setCharacterList(res.data.results) // array of 20 characters
+      setCharacterList(res.data.results); // array of 20 characters
     })
     .catch(err => {
-      console.log(err)
-      debugger
+      console.log(err);
+      debugger;
     })
   }, [])
 
@@ -38,7 +37,6 @@ const App = () => {
         {characterList && characterList.map((character, index) => {
           return <div key={index}><Character src={character.image} name={character.name}></Character></div>
         })}
-
       </Container>
     </div>
   );
