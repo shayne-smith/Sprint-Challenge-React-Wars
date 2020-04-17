@@ -37,8 +37,15 @@ const App = () => {
     <div className='App'>
       <h1 className='Header'>Characters</h1>
       <Container>
-        {characterList && console.log(characterList[0].image)}
-        {characterList && <Character src={characterList[0].image} name={characterList[0].name}></Character>}
+        {characterList && console.log(characterList[1].image)}
+
+        {characterList && characterList.forEach(character => console.log(character.name))}
+
+        
+          {characterList && characterList.map((character, index) => {
+            return <div key={index}><Character src={character.image} name={character.name}></Character></div>
+          })}
+
       </Container>
     </div>
   );

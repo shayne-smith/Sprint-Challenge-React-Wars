@@ -3,17 +3,19 @@ import React from 'react';
 import styled from 'styled-components';
 
 const CharacterCard = styled.div`
-    border-radius: 8px solid red;
     /* src: ${props => props.src ? props.image : 'inherit'}; */
     background-color: white;
     width: 300px;
     height: 200px;
+    margin: 10px;
 `;
 
 const CharacterImage = styled.img`
     src: ${props => props.src ? props.src : 'inherit'};
     margin: 10px auto;
     max-width: 100%;
+    border: 4px solid red;
+    border-radius: 8px;
 `;
 
 const CharacterText = styled.div`
