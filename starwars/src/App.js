@@ -30,6 +30,20 @@ const App = () => {
     })
   }, [])
 
+  useEffect(() => {
+    console.log('this runs ONLY the first time DOM is updated');
+    axios.get(`${base_url}character`)
+    .then(res => {
+      console.log(res)
+      // setCharacterList(res.data.results); // array of 20 characters
+      debugger
+    })
+    .catch(err => {
+      console.log(err);
+      debugger;
+    })
+  }, [])
+
   return (
     <div className='App'>
       <h1 className='Header'>Rick and Morty Characters</h1>

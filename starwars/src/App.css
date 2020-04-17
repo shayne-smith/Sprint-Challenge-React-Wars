@@ -8,4 +8,5 @@
 /* write your parent styles in here for your App.js */
 body {
   background-image: url('./images/rm-bg.jpg');
+  background-size: auto;
 }
