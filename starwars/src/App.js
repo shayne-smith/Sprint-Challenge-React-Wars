@@ -3,7 +3,8 @@ import './App.css';
 import axios from 'axios';
 // import styled from 'styled-components';
 
-import CharacterCard from './components/Character';
+import Character from './components/Character';
+import Container from './components/Container';
 
 const base_url = 'https://rickandmortyapi.com/api/';
 const characters = 'character';
@@ -23,7 +24,8 @@ const App = () => {
     axios.get(`${base_url}${characters}`)
     .then(res => {
       setCharacterList(res.data.results) // array of 20 characters
-      // debugger
+      // setCharacterList(characterList.push(res.data.results))
+      debugger
     })
     .catch(err => {
       console.log(err)
@@ -34,8 +36,10 @@ const App = () => {
   return (
     <div className='App'>
       <h1 className='Header'>Characters</h1>
-      {characterList && console.log(characterList[0].image)}
-      {characterList && <CharacterCard />}
+      <Container>
+        {characterList && console.log(characterList[0].image)}
+        {characterList && <Character src={characterList[0].image} name={characterList[0].name}></Character>}
+      </Container>
     </div>
   );
 }
