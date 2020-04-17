@@ -5,13 +5,14 @@ import styled from 'styled-components';
 const CharacterCard = styled.div`
     /* src: ${props => props.src ? props.image : 'inherit'}; */
     background-color: white;
-    width: 300px;
-    height: 200px;
+    width: 320px;
+    height: 400px;
     margin: 10px;
+    border-radius: 8px;
+    border: 4px solid gold;
 `;
 
 const CharacterImage = styled.img`
-    src: ${props => props.src ? props.src : 'inherit'};
     margin: 10px auto;
     max-width: 100%;
     border: 4px solid red;

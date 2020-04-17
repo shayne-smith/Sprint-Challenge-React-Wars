@@ -24,8 +24,6 @@ const App = () => {
     axios.get(`${base_url}${characters}`)
     .then(res => {
       setCharacterList(res.data.results) // array of 20 characters
-      // setCharacterList(characterList.push(res.data.results))
-      debugger
     })
     .catch(err => {
       console.log(err)
@@ -35,16 +33,11 @@ const App = () => {
 
   return (
     <div className='App'>
-      <h1 className='Header'>Characters</h1>
+      <h1 className='Header'>Rick and Morty Characters</h1>
       <Container>
-        {characterList && console.log(characterList[1].image)}
-
-        {characterList && characterList.forEach(character => console.log(character.name))}
-
-        
-          {characterList && characterList.map((character, index) => {
-            return <div key={index}><Character src={character.image} name={character.name}></Character></div>
-          })}
+        {characterList && characterList.map((character, index) => {
+          return <div key={index}><Character src={character.image} name={character.name}></Character></div>
+        })}
 
       </Container>
     </div>
