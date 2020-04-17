@@ -3,7 +3,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const CharacterCard = styled.div`
-    /* src: ${props => props.src ? props.image : 'inherit'}; */
     background-color: white;
     width: 320px;
     height: 400px;
